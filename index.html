@@ -3,12 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+    <title>Virtual Pet Sanctuary</title>
+    <script src="main.js" defer></script>
+    <style>
+        .pet-card{
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-
-
-    
+    <div class="pet-card">
+        <h2 id="pet-title">Displaying Pet...</h2>
+        <p>Hunger Level: <span id="hunger-level">50</span></p>
+        <button id="feed-btn">Feed Pet</button>
+    </div>
 </body>
 </html>
