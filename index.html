@@ -6,10 +6,19 @@
     <title>Virtual Pet Sanctuary</title>
     <script src="main.js" defer></script>
     <style>
-        .pet-card{
+        .pet-card, .input-container{
             padding: 10px;
             border-radius: 10px;
             display: inline-block;
+        }
+        .input-container {
+            display: block;
+            margin: 20px auto;
+        }
+        input {
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 5px;
         }
         button {
             background-color: #4caf50;
@@ -19,6 +28,9 @@
             margin-top: 15px;
             font-size: 15px;
         }
+        #pet-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -27,5 +39,11 @@
         <p>Hunger Level: <span id="hunger-level">50</span></p>
         <button id="feed-btn">Feed Pet</button>
     </div>
+    <div class="input-container">
+        <input type="text" id="petname-input">
+        <button id="add-pet">Add Pet</button>
+    </div>
+
+    <div id="pet-container"></div>
 </body>
 </html>
