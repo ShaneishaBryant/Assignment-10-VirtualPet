@@ -23,3 +23,11 @@ My mental model switched from a hardcoded object to a reusable blueprint. Instea
 
 The Pet class makes organizing the program much easier than manually tracking individual objects. It provides encapsulation, allowing the feed() method to target a specific pet instance independently.
 
+
+
+Phase 4 
+What bugs or unexpected behaviors did you catch during testing? If you used an AI tutor, what was the most helpful suggestion it gave you, and why did you choose to (or not choose to) implement it?
+
+Recommended for me to use template literals with innerHTML  to make my program clean and readable. These changes successfully shortened my code and were straightforward to implement.
+
+While Gemini also suggested using event delegation to consolidate listeners into a single parent element, I chose to stick with individual listeners for now since I'm still learning and want more hands-on practice wiring them up.

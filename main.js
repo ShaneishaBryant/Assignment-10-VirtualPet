@@ -9,7 +9,11 @@ class Pet{
     }
     //method to decrease hunger value 
     feed(){
-        this.hunger -= 10;
+        if (this.hunger >= 10){
+            this.hunger -= 10;
+        }else{
+            this.hunger = 0;
+        }
     }
 }
 
@@ -45,23 +49,15 @@ addPetBtn.addEventListener('click', () => {
     const petCard = document.createElement('div');
     petCard.className = "pet-card"; //assigning CSS
 
-    const heading = document.createElement('h2');
-    heading.textContent = newPet.describe();
+    petCard.innerHTML = `
+        <h2>${newPet.describe()}</h2>
+        <p>Hunger Level: <span class="hunger-display">${newPet.hunger}</span></p>
+        <button class="dynamic-feed-btn">Feed Pet</button>
+        `;
 
-    const paragraph = document.createElement('p');
-    paragraph.textContent = "Hunger Level: ";
-
-    const hungerDisplay = document.createElement('span');
-    hungerDisplay.className = "hunger-display";
-    hungerDisplay.textContent = newPet.hunger;
-
-    paragraph.appendChild(hungerDisplay);
-
-    const dynamicfeedBtn = document.createElement('button');
-    dynamicfeedBtn.className = "dynamic-feed-btn";
-    dynamicfeedBtn.textContent = "Feed Pet";
-
-    petCard.append(heading, paragraph, dynamicfeedBtn);
+    //Query the elements AFTER innerHTML has been created
+    const dynamicfeedBtn = petCard.querySelector(".dynamic-feed-btn");
+    const hungerDisplay = petCard.querySelector(".hunger-display");
 
     //attach click listener for specific pet's button
     dynamicfeedBtn.addEventListener('click', () => {
